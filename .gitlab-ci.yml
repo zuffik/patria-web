@@ -1,7 +1,7 @@
 build:
-  image: google/cloud-sdk
+  image: docker:dind
   services:
-    - docker:dind
+    - google/cloud-sdk
   before_script:
     - echo "$GOOGLE_CLOUD_AUTH" > /tmp/gcloud.json
     - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
