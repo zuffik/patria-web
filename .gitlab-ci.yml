@@ -1,5 +1,5 @@
 build:
-  image: docker:dind
+  image: zuffik/gcloud-dind
   services:
     - google/cloud-sdk
   before_script:
