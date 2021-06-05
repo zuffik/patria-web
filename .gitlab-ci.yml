@@ -1,11 +1,13 @@
 build:
   image: google/cloud-sdk
+  services:
+    - docker:dind
   before_script:
     - echo "$GOOGLE_CLOUD_AUTH" > /tmp/gcloud.json
     - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
     - gcloud auth configure-docker
   script:
-    - docker pull docker push $GOOGLE_DOCKER_TAG:latest || true
+    - docker pull $GOOGLE_DOCKER_TAG:latest || true
     - docker build -t $GOOGLE_DOCKER_TAG:$CI_COMMIT_SHORT_SHA --cache-from $GOOGLE_DOCKER_TAG:latest .
     - docker tag $GOOGLE_DOCKER_TAG:$CI_COMMIT_SHORT_SHA $GOOGLE_DOCKER_TAG:latest
     - docker push $GOOGLE_DOCKER_TAG:$GOOGLE_DOCKER_TAG:$CI_COMMIT_SHORT_SHA
