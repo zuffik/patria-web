@@ -1,11 +1,10 @@
 build:
-  image: zuffik/gcloud-dind
-  services:
-    - google/cloud-sdk
+  image: docker:dind
   before_script:
+    - docker pull gcr.io/google.com/cloudsdktool/cloud-sdk:latest
     - echo "$GOOGLE_CLOUD_AUTH" > /tmp/gcloud.json
-    - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
-    - gcloud auth configure-docker
+    - docker run gcr.io/google.com/cloudsdktool/cloud-sdk:latest gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
+    - docker run --rm gcr.io/google.com/cloudsdktool/cloud-sdk:latest gcloud auth configure-docker
   script:
     - docker pull $GOOGLE_DOCKER_TAG:latest || true
     - docker build -t $GOOGLE_DOCKER_TAG:$CI_COMMIT_SHORT_SHA --cache-from $GOOGLE_DOCKER_TAG:latest .
