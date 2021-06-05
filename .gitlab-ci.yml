@@ -1,9 +1,8 @@
 build:
   image: google/cloud-sdk
   before_script:
-    - echo "$GOOGLE_CLOUD_ACCOUNT" "$GOOGLE_CLOUD_AUTH"
-    - echo "$GOOGLE_CLOUD_AUTH" > ~/.gcloud.json
-    - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=~/.gcloud.json
+    - echo "$GOOGLE_CLOUD_AUTH" > /tmp/gcloud.json
+    - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
     - gcloud auth configure-docker
   script:
     - docker pull docker push $GOOGLE_DOCKER_TAG:latest || true
