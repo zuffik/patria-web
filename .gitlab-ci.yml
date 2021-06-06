@@ -1,5 +1,5 @@
 build:
-  image: zuffik/gcloud-dind
+  image: google/cloud-sdk
   tags:
     - docker-rpi
   before_script:
