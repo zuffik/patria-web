@@ -7,4 +7,5 @@ CMD ["yarn", "start"]
 COPY yarn.lock .
 COPY package.json .
 RUN yarn --frozen-lockfile
+COPY . .
 RUN yarn build
