@@ -1,7 +1,8 @@
 build:
   image: zuffik/gcloud-dind
+  tags:
+    - docker-rpi
   before_script:
-    - echo $PATH
     - echo "$GOOGLE_CLOUD_AUTH" > /tmp/gcloud.json
     - gcloud auth activate-service-account "$GOOGLE_CLOUD_ACCOUNT" --key-file=/tmp/gcloud.json
     - gcloud auth configure-docker
