@@ -51,6 +51,8 @@ export const ComingSoon: React.FC<ComingSoonProps> = (props) => {
   const classes = useStyles(props);
   const tel = '+421 911 217 224';
   const insta = 'autoservis_patria';
+  const fbLabel = 'Autoservis & Pneuservis Patria';
+  const fbLink = 'https://www.facebook.com/Autoservis-Pneuservis-Patria-106763634881314';
   const center = React.useMemo(
     () => ({
       lat: 49.1661904,
@@ -83,6 +85,12 @@ export const ComingSoon: React.FC<ComingSoonProps> = (props) => {
         <strong>Instagram:</strong>
         <a href={`https://www.instagram.com/${insta}`} target="_blank">
           @{insta}
+        </a>
+      </Typography>
+      <Typography classes={{ root: classes.contact }}>
+        <strong>Facebook:</strong>
+        <a href={fbLink} target="_blank">
+          {fbLabel}
         </a>
       </Typography>
       <div className={classes.map}>
