@@ -61,6 +61,7 @@ export const ComingSoon: React.FC<ComingSoonProps> = (props) => {
   const classes = useStyles(props);
   const tel = '+421 911 217 224';
   const insta = 'autoservis_patria';
+  const email = 'info@autopatria.sk';
   const fbLabel = 'Autoservis & Pneuservis Patria';
   const fbLink =
     'https://www.facebook.com/Autoservis-Pneuservis-Patria-106763634881314';
@@ -90,6 +91,12 @@ export const ComingSoon: React.FC<ComingSoonProps> = (props) => {
         <strong>Tel. č.:</strong>
         <a href={`tel:${tel}`} target="_blank">
           {tel}
+        </a>
+      </Typography>
+      <Typography classes={{ root: classes.contact }}>
+        <strong>E-mail:</strong>
+        <a href={`mailto:${email}`} target="_blank">
+          {email}
         </a>
       </Typography>
       <Typography classes={{ root: classes.contact }}>
