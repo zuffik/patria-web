@@ -1,14 +1,15 @@
 import React from 'react';
 import { GoogleMap as BaseMap, useJsApiLoader, GoogleMapProps as BaseMapProps } from '@react-google-maps/api';
+import {env} from "../../env/Env";
 
 export interface GoogleMapProps extends BaseMapProps {
-
 }
+
 export const GoogleMap: React.FC<GoogleMapProps> = props => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
-    mapIds: [process.env.GOOGLE_MAPS_MAP_ID],
+    googleMapsApiKey: env.GOOGLE_MAPS_API_KEY,
+    mapIds: [env.GOOGLE_MAPS_MAP_ID],
   })
   const containerStyle = React.useMemo(() => ({
     width: '100%',
@@ -32,7 +33,7 @@ export const GoogleMap: React.FC<GoogleMapProps> = props => {
       mapContainerStyle={props.mapContainerStyle || containerStyle}
       onLoad={onLoad}
       onUnmount={onUnmount}
-      options={{mapId: process.env.GOOGLE_MAPS_MAP_ID}}
+      options={{mapId: env.GOOGLE_MAPS_MAP_ID}}
     >
       {props.children}
     </BaseMap>
