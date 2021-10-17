@@ -1,7 +1,6 @@
 import React from 'react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
-import {env} from "../src/lib/env/Env";
 
 export default class MyDocument extends Document {
   render() {
@@ -50,9 +49,9 @@ export default class MyDocument extends Document {
           <meta name="description" content="Autoservis a pneuservis zameraný na opravu motorových, osobných aj nákladných vozidiel aj nad 3,5 tony + autodetailingové štúdio a tepovanie interiéru."/>
           <link rel="canonical" href="https://autopatria.sk"/>
           {
-            env().GA_MEASUREMENT_ID && (
+            process.env.GA_MEASUREMENT_ID && (
               <>
-                <script async src={`https://www.googletagmanager.com/gtag/js?id=${env().GA_MEASUREMENT_ID}`}/>
+                <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
                 <script>
                   {
                     `
@@ -60,7 +59,7 @@ export default class MyDocument extends Document {
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '${env().GA_MEASUREMENT_ID}');
+                    gtag('config', '${process.env.GA_MEASUREMENT_ID}');
                     `
                   }
                 </script>
