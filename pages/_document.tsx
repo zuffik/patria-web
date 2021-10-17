@@ -1,10 +1,9 @@
 import React from 'react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
-import Script from 'next/script'
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 export default class MyDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>
@@ -47,26 +46,11 @@ export default class MyDocument extends Document {
             content="/img/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
-          <meta name="description" content="Autoservis a pneuservis zameraný na opravu motorových, osobných aj nákladných vozidiel aj nad 3,5 tony + autodetailingové štúdio a tepovanie interiéru."/>
-          <link rel="canonical" href="https://autopatria.sk"/>
-          {
-            process.env.GA_MEASUREMENT_ID && (
-              <>
-                <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
-                <Script strategy="lazyOnload">
-                  {
-                    `
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-                    gtag('config', '${process.env.GA_MEASUREMENT_ID}');
-                    `
-                  }
-                </Script>
-              </>
-            )
-          }
+          <meta
+            name="description"
+            content="Autoservis a pneuservis zameraný na opravu motorových, osobných aj nákladných vozidiel aj nad 3,5 tony + autodetailingové štúdio a tepovanie interiéru."
+          />
+          <link rel="canonical" href="https://autopatria.sk" />
         </Head>
         <body>
           <Main />

@@ -2,11 +2,12 @@ import React from 'react';
 import { GoogleMap as BaseMap, useJsApiLoader, GoogleMapProps as BaseMapProps } from '@react-google-maps/api';
 
 export interface GoogleMapProps extends BaseMapProps {
+  id?: string;
 }
 
 export const GoogleMap: React.FC<GoogleMapProps> = props => {
   const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
+    id: props.id || 'google-map-script',
     googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     mapIds: [process.env.GOOGLE_MAPS_MAP_ID],
   })
@@ -14,7 +15,7 @@ export const GoogleMap: React.FC<GoogleMapProps> = props => {
     width: '100%',
     height: '100%',
   }), []);
-  const [map, setMap] = React.useState<google.maps.Map>(null);
+  const [, setMap] = React.useState<google.maps.Map>(null);
 
   const onLoad = React.useCallback((map) => {
     setMap(map);
