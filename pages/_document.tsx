@@ -1,5 +1,5 @@
 import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 export default class MyDocument extends Document {
@@ -7,22 +7,49 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
-          <link href='https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap'
-                rel='stylesheet' />
-          <link rel='apple-touch-icon' sizes='180x180' href='/img/favicon/apple-touch-icon.png' />
-          <link rel='icon' type='image/png' sizes='32x32' href='/img/favicon/favicon-32x32.png' />
-          <link rel='icon' type='image/png' sizes='16x16' href='/img/favicon/favicon-16x16.png' />
-          <link rel='manifest' href='/img/favicon/site.webmanifest' />
-          <link rel='mask-icon' href='/img/favicon/safari-pinned-tab.svg' color='#d65a31' />
-          <link rel='shortcut icon' href='/img/favicon/favicon.ico' />
-          <meta name='msapplication-TileColor' content='#d65a31' />
-          <meta name='msapplication-config' content='/img/favicon/browserconfig.xml' />
-          <meta name='theme-color' content='#ffffff' />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/img/favicon/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/img/favicon/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/img/favicon/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/img/favicon/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/img/favicon/safari-pinned-tab.svg"
+            color="#d65a31"
+          />
+          <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#d65a31" />
+          <meta
+            name="msapplication-config"
+            content="/img/favicon/browserconfig.xml"
+          />
+          <meta name="theme-color" content="#ffffff" />
         </Head>
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
@@ -68,6 +95,9 @@ MyDocument.getInitialProps = async (ctx) => {
   return {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
-    styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
+    styles: [
+      ...React.Children.toArray(initialProps.styles),
+      sheets.getStyleElement(),
+    ],
   };
 };

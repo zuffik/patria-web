@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core';
+import {createMuiTheme, fade} from '@material-ui/core';
 
 export const createTheme = () => {
   const baseTheme = createMuiTheme({
@@ -25,6 +25,7 @@ export const createTheme = () => {
       text: {
         primary: baseTheme.palette.secondary.contrastText,
       },
+      divider: fade(baseTheme.palette.secondary.main, 0.4)
     },
     typography: {
       fontFamily: ["'Comfortaa'", 'sans-serif'].join(', '),
@@ -38,6 +39,9 @@ export const createTheme = () => {
         [baseTheme.breakpoints.down('sm')]: {
           fontSize: baseTheme.typography.pxToRem(32)
         }
+      },
+      body2: {
+        fontFamily: ['"Montserrat"', '"Comfortaa"', 'sans-serif'].join(', ')
       }
     },
   });
