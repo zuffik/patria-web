@@ -1,6 +1,5 @@
 import React from 'react';
 import { GoogleMap as BaseMap, useJsApiLoader, GoogleMapProps as BaseMapProps } from '@react-google-maps/api';
-import {env} from "../../env/Env";
 
 export interface GoogleMapProps extends BaseMapProps {
 }
