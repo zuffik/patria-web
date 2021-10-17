@@ -21,7 +21,7 @@ export default function App(props: AppProps) {
   return (
     <>
       <Head>
-        <title>Patria</title>
+        <title>Patria | autoservis & pneuservis</title>
       </Head>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />

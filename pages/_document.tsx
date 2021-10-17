@@ -46,6 +46,9 @@ export default class MyDocument extends Document {
             content="/img/favicon/browserconfig.xml"
           />
           <meta name="theme-color" content="#ffffff" />
+          <meta name="description" content="Autoservis a pneuservis zameraný na opravu motorových, osobných aj nákladných vozidiel aj nad 3,5 tony + autodetailingové štúdio a tepovanie interiéru."/>
+          <link rel="canonical" href="https://www.autopatria.sk"/>
+          <link rel="canonical" href="https://autopatria.sk"/>
         </Head>
         <body>
           <Main />

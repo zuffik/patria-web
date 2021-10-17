@@ -8,7 +8,7 @@ export interface LogoProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement
 export const Logo: React.FC<LogoProps> = props => {
   const {color, variant, ...rest} = props;
   return (
-    <img {...rest} src={`./img/svg/logo-${props.variant}-${props.color}.svg`} />
+    <img alt="Patria" {...rest} src={`./img/svg/logo-${props.variant}-${props.color}.svg`} />
   )
 }
 

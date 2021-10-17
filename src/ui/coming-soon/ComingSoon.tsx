@@ -101,21 +101,21 @@ export const ComingSoon: React.FC<ComingSoonProps> = (props) => {
       </Typography>
       <Typography classes={{ root: classes.contact }}>
         <strong>Instagram:</strong>
-        <a href={`https://www.instagram.com/${insta}`} target="_blank">
+        <a href={`https://www.instagram.com/${insta}`} target="_blank" rel="noopener">
           @{insta}
         </a>
       </Typography>
       <Typography classes={{ root: classes.contact }}>
         <strong>Facebook:</strong>
-        <a href={fbLink} target="_blank">
+        <a href={fbLink} target="_blank" rel="noopener">
           {fbLabel}
         </a>
       </Typography>
       <div className={classes.content}>
-        <Typography variant="h4">Cenník</Typography>
+        <Typography variant="h4" component="h3">Cenník</Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <Typography variant="h5" classes={{ root: classes.priceListTitle }}>
+            <Typography variant="h5" component="h4" classes={{ root: classes.priceListTitle }}>
               Tepovanie interiéru
             </Typography>
             <PriceListItem
