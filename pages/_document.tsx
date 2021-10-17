@@ -1,5 +1,6 @@
 import React from 'react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script'
 import { ServerStyleSheets } from '@material-ui/core/styles';
 
 export default class MyDocument extends Document {
@@ -51,8 +52,8 @@ export default class MyDocument extends Document {
           {
             process.env.GA_MEASUREMENT_ID && (
               <>
-                <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
-                <script>
+                <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
+                <Script strategy="lazyOnload">
                   {
                     `
                     window.dataLayer = window.dataLayer || [];
@@ -62,7 +63,7 @@ export default class MyDocument extends Document {
                     gtag('config', '${process.env.GA_MEASUREMENT_ID}');
                     `
                   }
-                </script>
+                </Script>
               </>
             )
           }
