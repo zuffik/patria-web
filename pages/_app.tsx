@@ -21,9 +21,6 @@ export default function App(props: AppProps): JSX.Element {
   }, []);
   return (
     <>
-      <Head>
-        <title>Patria | autoservis & pneuservis</title>
-      </Head>
       {
         process.env.GA_MEASUREMENT_ID && (
           <>
@@ -42,6 +39,9 @@ export default function App(props: AppProps): JSX.Element {
           </>
         )
       }
+      <Head>
+        <title>Patria | autoservis & pneuservis</title>
+      </Head>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
         <Component {...pageProps} />
