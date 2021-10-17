@@ -22,9 +22,9 @@ export default function App(props: AppProps): JSX.Element {
   return (
     <>
       {
-        /*process.env.GA_MEASUREMENT_ID &&*/ (
+        process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
-            <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
+            <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}/>
             <Script strategy="lazyOnload">
               {
                 `
@@ -32,7 +32,7 @@ export default function App(props: AppProps): JSX.Element {
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', '${process.env.GA_MEASUREMENT_ID}');
+                    gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
                     `
               }
             </Script>
