@@ -4,4 +4,4 @@ export interface Env extends NodeJS.ProcessEnv {
   GA_MEASUREMENT_ID?: string;
 }
 
-export const env = process.env as Env;
+export const env = () => process.env as Env;

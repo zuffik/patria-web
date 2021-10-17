@@ -8,8 +8,8 @@ export interface GoogleMapProps extends BaseMapProps {
 export const GoogleMap: React.FC<GoogleMapProps> = props => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: env.GOOGLE_MAPS_API_KEY,
-    mapIds: [env.GOOGLE_MAPS_MAP_ID],
+    googleMapsApiKey: env().GOOGLE_MAPS_API_KEY,
+    mapIds: [env().GOOGLE_MAPS_MAP_ID],
   })
   const containerStyle = React.useMemo(() => ({
     width: '100%',
@@ -33,7 +33,7 @@ export const GoogleMap: React.FC<GoogleMapProps> = props => {
       mapContainerStyle={props.mapContainerStyle || containerStyle}
       onLoad={onLoad}
       onUnmount={onUnmount}
-      options={{mapId: env.GOOGLE_MAPS_MAP_ID}}
+      options={{mapId: env().GOOGLE_MAPS_MAP_ID}}
     >
       {props.children}
     </BaseMap>
