@@ -22,7 +22,7 @@ export default function App(props: AppProps): JSX.Element {
   return (
     <>
       {
-        process.env.GA_MEASUREMENT_ID && (
+        /*process.env.GA_MEASUREMENT_ID &&*/ (
           <>
             <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_MEASUREMENT_ID}`}/>
             <Script strategy="lazyOnload">
