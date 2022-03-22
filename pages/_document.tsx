@@ -50,6 +50,10 @@ export default class MyDocument extends Document {
             name="description"
             content="Autoservis a pneuservis zameraný na opravu motorových, osobných aj nákladných vozidiel aj nad 3,5 tony + autodetailingové štúdio a tepovanie interiéru."
           />
+          <meta
+            name="keywords"
+            content="autoservis, pneuservis, liptov, liptovské matiašovce, oprava áut, tepovanie"
+          />
           <link rel="canonical" href="https://autopatria.sk" />
         </Head>
         <body>
